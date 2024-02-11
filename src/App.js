@@ -41,8 +41,10 @@ function App() {
       <Current data={data} />
       <p>
         {" "}
-        <a src='https://github.com/KethyI/weather-react'>Open source code</a> on
-        Github
+        <a href='https://github.com/KethyI/weather-react'>
+          Open source code
+        </a>{" "}
+        on Github
       </p>
     </div>
   );

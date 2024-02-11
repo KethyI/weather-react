@@ -22,6 +22,7 @@ export default function Current(props) {
         <div className='col'>
           <img
             src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+            alt={props.data.weather[0].description}
           />
         </div>
       </div>
