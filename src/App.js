@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Current from "./Current";
+import React, { useState } from "react";
+import axios from "axios";
 
 function App() {
+  let [city, setCity] = useState("");
+  let [data, setData] = useState(null);
+
+  let key = `0ebc654fccbc00189d5408f3d6f15b08`;
+  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
+
+  function getCity(event) {
+    setCity(event.target.value);
+  }
+
+  function getWeather(response) {
+    setData(response.data);
+  }
+
+  function showWeather(event) {
+    event.preventDefault();
+    if (city.length === 0) {
+      alert(`Enter the city`);
+    } else {
+      axios.get(url).then(getWeather);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <h1>Weather App</h1>
+      <form onSubmit={showWeather}>
+        <input
+          placeholder='Type a city'
+          type='search'
+          onChange={getCity}
+        ></input>
+        <button type='submit'>Search</button>
+      </form>
+      <Current data={data} />
+      <p>
+        {" "}
+        <a src='/'>Open source code</a> on Github
+      </p>
     </div>
   );
 }
