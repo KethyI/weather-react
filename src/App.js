@@ -2,6 +2,7 @@ import "./App.css";
 import Current from "./Current";
 import React, { useState } from "react";
 import axios from "axios";
+import "bootstrap";
 
 function App() {
   let [city, setCity] = useState("");
@@ -36,12 +37,21 @@ function App() {
           type='search'
           onChange={getCity}
         ></input>
-        <button type='submit'>Search</button>
+        <button
+          type='submit'
+          className='btn btn-primary'
+        >
+          Search
+        </button>
       </form>
       <Current data={data} />
       <p>
         {" "}
-        <a href='https://github.com/KethyI/weather-react'>
+        <a
+          href='https://github.com/KethyI/weather-react'
+          target='_blank'
+          rel='noreferrer'
+        >
           Open source code
         </a>{" "}
         on Github
