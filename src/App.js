@@ -1,50 +1,42 @@
 import "./App.css";
-import Current from "./Current";
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap";
+import Current from "./Current";
 
-function App() {
-  let [city, setCity] = useState("");
-  let [data, setData] = useState(null);
-
-  let key = `0ebc654fccbc00189d5408f3d6f15b08`;
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
+export default function App() {
+  let [city, setCity] = useState("Kyiv");
 
   function getCity(event) {
     setCity(event.target.value);
   }
 
-  function getWeather(response) {
-    setData(response.data);
-  }
-
   function showWeather(event) {
     event.preventDefault();
-    if (city.length === 0) {
+    if (city === "Kyiv") {
       alert(`Enter the city`);
     } else {
-      axios.get(url).then(getWeather);
+      alert("Loading");
     }
   }
-
   return (
     <div className='App'>
       <h1>Weather App</h1>
       <form onSubmit={showWeather}>
+        <button className=' btn-search'>Current</button>
         <input
-          placeholder='Type a city'
+          placeholder='Choose another city..'
           type='search'
           onChange={getCity}
         ></input>
         <button
           type='submit'
-          className='btn btn-primary'
+          className='btn-search'
         >
           Search
         </button>
       </form>
-      <Current data={data} />
+      <Current city={city} />
       <p>
         {" "}
         <a
@@ -59,5 +51,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

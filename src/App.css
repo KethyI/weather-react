@@ -1,0 +1,37 @@
+img {
+  position: center;
+  width: 100px;
+  min-width: 10px;
+}
+
+.App {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.App form {
+  margin: 20px;
+}
+
+.App form input {
+  width: 79%;
+  background: rgba(38, 0, 77, 1);
+  color: rgba(255, 255, 204, 1);
+  transition: all 100ms ease-in-out;
+  border: 1px solid rgba(255, 255, 204, 1);
+  border-radius: 5px;
+}
+
+.App form input:hover {
+  background: rgba(255, 255, 204, 1);
+  color: rgba(38, 0, 77, 1);
+}
+
+.App .btn-search {
+  width: 10%;
+  border: 1px solid rgba(255, 255, 204, 1);
+  color: rgba(255, 255, 204, 1);
+  border-radius: 5px;
+  background: rgba(38, 0, 77, 1);
+}
