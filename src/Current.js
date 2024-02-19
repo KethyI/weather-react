@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Time from "./Time";
 
 export default function Current(props) {
   let [weather, setWeather] = useState({ ready: false });
@@ -11,11 +12,12 @@ export default function Current(props) {
     return (
       <div className='App'>
         <h2>{weather.city}</h2>
+        <Time time={new Date(weather.time * 1000)} />
         <div className='row'>
           <div className='col-6  mt-4'>
             <p>Temperature: {Math.round(weather.temp)}℃</p>
             <p>Humidity: {weather.humidity}%</p>
-            <p>Wind: props.{weather.wind}km/h</p>
+            <p>Wind: {weather.wind}km/h</p>
           </div>
 
           <div className='col-6'>
@@ -37,6 +39,7 @@ export default function Current(props) {
         description: response.data.weather[0].description,
         icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
         wind: response.data.wind.speed,
+        time: response.data.dt,
         ready: true,
       });
     }
@@ -45,29 +48,3 @@ export default function Current(props) {
     return <div className='App'>Loading...</div>;
   }
 }
-
-//   } else {
-//     return (
-//       <div className='Current'>
-//         <h2>{props.data.name}</h2>
-//         <div className='row'>
-//           <div className='col-6'>
-//             <p className='text-capitalize'>
-//               {props.data.weather[0].description}
-//             </p>
-//             <p>Temperature: {Math.round(props.data.main.temp)}℃</p>
-//             <p>Humidity: {props.data.main.humidity}%</p>
-//             <p>Wind: {props.data.wind.speed}km/h</p>
-//           </div>
-
-//           <div className='col-6'>
-//             <img
-//               src={weather.icon}
-//               alt={weather.description}
-//             />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
