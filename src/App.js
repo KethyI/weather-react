@@ -1,53 +1,34 @@
 import "./App.css";
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "bootstrap";
-import Current from "./Current";
+import Weather from "./Weather";
 
 export default function App() {
-  let [city, setCity] = useState("Kyiv");
-
-  function getCity(event) {
-    setCity(event.target.value);
-  }
-
-  function showWeather(event) {
-    event.preventDefault();
-    if (city === "Kyiv") {
-      alert(`Enter the city`);
-    } else {
-      alert("Loading");
-    }
-  }
   return (
     <div className='App'>
       <h1>Weather App</h1>
-      <form onSubmit={showWeather}>
-        <button className=' btn-search'>Current</button>
-        <input
-          placeholder='Choose another city..'
-          type='search'
-          onChange={getCity}
-        ></input>
-        <button
-          type='submit'
-          className='btn-search'
-        >
-          Search
-        </button>
-      </form>
-      <Current city={city} />
-      <p>
-        {" "}
-        <a
-          href='https://github.com/KethyI/weather-react'
-          target='_blank'
-          rel='noreferrer'
-        >
-          Open source code
-        </a>{" "}
-        on Github
-      </p>
+      <Weather city='Kyiv' />
+
+      <footer>
+        <p>
+          {" "}
+          <a
+            href='https://github.com/KethyI/weather-react'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Open source code
+          </a>{" "}
+          on Github by{" "}
+          <a
+            href='https://www.linkedin.com/in/iryna-kot-2b29b9218/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            Iryna Kot
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
