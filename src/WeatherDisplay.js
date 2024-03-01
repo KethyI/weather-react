@@ -1,6 +1,7 @@
 import React from "react";
 import Time from "./Time";
 import Temperature from "./Temperature";
+import Icon from "./Icon";
 
 export default function WeatherDisplay(props) {
   return (
@@ -15,8 +16,8 @@ export default function WeatherDisplay(props) {
         </div>
 
         <div className='col-6'>
-          <img
-            src={props.data.icon}
+          <Icon
+            icon={props.data.icon}
             alt={props.data.description}
           />
           <p className='text-capitalize'>{props.data.description}</p>
