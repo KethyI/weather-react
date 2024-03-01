@@ -1,5 +1,6 @@
 import React from "react";
 import Time from "./Time";
+import Temperature from "./Temperature";
 
 export default function WeatherDisplay(props) {
   return (
@@ -8,7 +9,7 @@ export default function WeatherDisplay(props) {
       <Time time={new Date(props.data.time * 1000)} />
       <div className='row'>
         <div className='col-6  mt-4'>
-          <p>Temperature: {Math.round(props.data.temp)}℃</p>
+          <Temperature celsius={props.data.temp} />
           <p>Humidity: {props.data.humidity}%</p>
           <p>Wind: {props.data.wind}km/h</p>
         </div>
