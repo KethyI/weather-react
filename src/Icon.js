@@ -9,7 +9,6 @@ import storm from "./weather pics/storm.png";
 import snow from "./weather pics/snow.png";
 
 export default function Icon(props) {
-  console.log(props.icon);
   let icon = {
     "https://openweathermap.org/img/wn/01d@2x.png": sun,
     "https://openweathermap.org/img/wn/04d@2x.png": clouds,
@@ -35,6 +34,7 @@ export default function Icon(props) {
       <img
         src={icon[props.icon]}
         alt={props.alt}
+        width={props.size}
       />
     </div>
   );

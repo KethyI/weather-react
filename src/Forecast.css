@@ -1,0 +1,11 @@
+.Forecast span {
+  opacity: 0.7;
+}
+
+.Forecast img {
+  width: 70px;
+}
+
+.Forecast {
+  margin-bottom: 5px;
+}
