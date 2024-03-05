@@ -7,6 +7,8 @@ import clouds from "./weather pics/clouds.png";
 import lightRain from "./weather pics/lightRain.png";
 import storm from "./weather pics/storm.png";
 import snow from "./weather pics/snow.png";
+import fog from "./weather pics/fog.png";
+import rain from "./weather pics/rain.png";
 
 export default function Icon(props) {
   let icon = {
@@ -19,14 +21,14 @@ export default function Icon(props) {
     "https://openweathermap.org/img/wn/03n@2x.png": clouds,
     "https://openweathermap.org/img/wn/04n@2x.png": clouds,
     "https://openweathermap.org/img/wn/09d@2x.png": lightRain,
-    "https://openweathermap.org/img/wn/09n@2x.png": storm,
-    "https://openweathermap.org/img/wn/10n@2x.png": storm,
-    "https://openweathermap.org/img/wn/11d@2x.png": storm, //hard storm
-    "https://openweathermap.org/img/wn/11n@2x.png": storm, //hard storm
+    "https://openweathermap.org/img/wn/09n@2x.png": rain,
+    "https://openweathermap.org/img/wn/10n@2x.png": rain,
+    "https://openweathermap.org/img/wn/11d@2x.png": storm,
+    "https://openweathermap.org/img/wn/11n@2x.png": storm,
     "https://openweathermap.org/img/wn/13d@2x.png": snow,
     "https://openweathermap.org/img/wn/13n@2x.png": snow,
-    "https://openweathermap.org/img/wn/50d@2x.png": clouds, //fog
-    "https://openweathermap.org/img/wn/50n@2x.png": clouds, //fog
+    "https://openweathermap.org/img/wn/50d@2x.png": fog,
+    "https://openweathermap.org/img/wn/50n@2x.png": fog,
   };
 
   return (
