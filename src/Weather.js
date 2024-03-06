@@ -29,12 +29,13 @@ export default function Weather(props) {
       icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       time: response.data.dt,
+      coord: response.data.coord,
       ready: true,
     });
   }
 
   function search() {
-    let key = `0ebc654fccbc00189d5408f3d6f15b08`;
+    let key = `97bed167ec49bff56e6c1b63daef9c86`;
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`;
     axios.get(url).then(getWeather);
   }
@@ -57,7 +58,7 @@ export default function Weather(props) {
           </button>
         </form>
         <WeatherDisplay data={weather} />
-        <Forecast />
+        <Forecast coord={weather.coord} />
       </div>
     );
   } else {
