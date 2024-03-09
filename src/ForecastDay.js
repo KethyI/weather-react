@@ -2,8 +2,6 @@ import React from "react";
 import Icon from "./Icon";
 
 export default function ForecastDay(props) {
-  console.log(props);
-
   function showDate() {
     let date = new Date(props.day.time * 1000);
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
