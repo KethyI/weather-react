@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Forecast.css";
 import axios from "axios";
 import ForecastDay from "./ForecastDay";
@@ -7,9 +7,13 @@ export default function Forecast(props) {
   const [forecast, setForecast] = useState(null);
   const [ready, setReady] = useState(false);
 
+  useEffect(() => {
+    setReady(false);
+  }, [props.coord]);
+
   if (ready) {
     return (
-      <div className='Forecast'>
+      <div className='Forecast mt-3'>
         <div className='row'>
           {forecast.map((data, index) => {
             if (index < 5) {

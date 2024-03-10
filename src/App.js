@@ -9,7 +9,7 @@ export default function App() {
       <h1>Weather App</h1>
       <Weather city='Kyiv' />
 
-      <footer>
+      <footer className='mt-5'>
         <p>
           {" "}
           <a
