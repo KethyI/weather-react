@@ -44,7 +44,6 @@ export default function Weather(props) {
     return (
       <div className='Weather'>
         <form onSubmit={showWeather}>
-          <button className=' btn-search'>Current</button>
           <input
             placeholder='Choose another city..'
             type='search'
