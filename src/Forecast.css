@@ -9,3 +9,9 @@
 .Forecast {
   margin-bottom: 5px;
 }
+
+.row .col .card {
+  background-color: rgba(112, 110, 240, 0.5);
+  color: rgba(255, 255, 204, 1);
+  border: 1px solid rgba(255, 255, 204, 1);
+}

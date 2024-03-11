@@ -19,12 +19,14 @@ export default function Forecast(props) {
             if (index < 5) {
               return (
                 <div
-                  className='col'
+                  className='col card'
                   key={index}
                 >
                   <ForecastDay day={data} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
